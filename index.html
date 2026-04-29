@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Evaluate AI-generated EFL lesson plans using a structured rating framework. Research survey for master's students in Applied Linguistics and Foreign Language Teaching. Takes 10-15 minutes to complete.">
+<meta name="keywords" content="EFL, lesson plan, AI-generated content, evaluation framework, applied linguistics, language pedagogy, survey, research">
+<meta name="author" content="Youssef — Master's Research at Moulay Ismail University">
+<meta name="theme-color" content="#0D2B5E">
+<meta name="color-scheme" content="light">
+<!-- Open Graph / Social Media -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="">
+<meta property="og:title" content="EFL Lesson Plan Evaluation Survey">
+<meta property="og:description" content="Participate in research validating an evaluation framework for AI-generated EFL lesson plans. Anonymous, 10-15 minutes.">
+<meta property="og:image" content="">
+<meta property="og:site_name" content="EFL Survey">
+<meta property="og:locale" content="en_US">
+<!-- Twitter Card -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="">
+<meta property="twitter:title" content="EFL Lesson Plan Evaluation Survey">
+<meta property="twitter:description" content="Rate AI-generated lesson plans using quality criteria. Research study for master's students.">
+<meta property="twitter:image" content="">
+<!-- Technical & Accessibility -->
+<meta name="language" content="English">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="robots" content="noindex, nofollow">
+<meta name="revisit-after" content="7 days">
+<meta name="rating" content="general">
+<meta name="distribution" content="global">
+<meta name="format-detection" content="telephone=no">
+<!-- Security & Compliance -->
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<!-- Application -->
+<meta name="application-name" content="EFL Survey">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="EFL Survey">
+<!-- Canonical (update with your actual domain) -->
+<link rel="canonical" href="">
+<title>EFL Lesson Plan Evaluation Survey — Master's Research</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #F0F4F9;
+  --surface: #FFFFFF;
+  --border: #B8CFEA;
+  --text: #0D1F3C;
+  --text-muted: #5A7190;
+  --accent: #1A5FAD;
+  --accent-light: #E8F1FC;
+  --header-bg: #0D2B5E;
+  --header-text: #EEF4FC;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+h1, h2, h3 { font-family: 'Playfair Display', serif; }
+
+/* ── PROGRESS ── */
+.progress-bar-wrap {
+  position: sticky; top: 0; z-index: 100;
+  background: var(--header-bg);
+  padding: 10px 20px;
+  display: flex; align-items: center; gap: 12px;
+}
+.prog-label { color: var(--header-text); font-size: 12px; font-weight: 500; white-space: nowrap; opacity: .8; }
+.prog-track { flex: 1; height: 3px; background: rgba(255,255,255,.2); border-radius: 2px; overflow: hidden; }
+.prog-fill  { height: 100%; background: var(--accent); border-radius: 2px; transition: width .4s ease; }
+
+/* ── LAYOUT ── */
+.container { max-width: 920px; margin: 0 auto; padding: 16px 20px; }
+
+.step { display: none; }
+.step.active { display: block; }
+
+/* ── COVER ── */
+.cover { text-align: center; }
+.cover-seal {
+  width: 64px; height: 64px; background: var(--accent); border-radius: 50%;
+  margin: 0 auto 24px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Playfair Display', serif; font-size: 22px; color: #fff; letter-spacing: 1px;
+}
+.cover h1 { font-size: 26px; line-height: 1.3; margin-bottom: 14px; }
+.cover-rule { width: 56px; height: 2px; background: var(--accent); margin: 20px auto; }
+.cover p { max-width: 540px; margin: 0 auto 10px; color: var(--text-muted); font-size: 13.5px; }
+.cover-meta { display: flex; justify-content: center; gap: 28px; margin: 24px 0; flex-wrap: wrap; }
+.cover-meta-item { display: flex; align-items: center; gap: 7px; font-size: 13px; color: var(--text-muted); }
+.cover-meta-item b { color: var(--accent); font-weight: 500; }
+
+/* ── SECTION HEADER ── */
+.section-header {
+  background: var(--header-bg); color: var(--header-text);
+  padding: 18px 22px; margin-bottom: 22px;
+  border-left: 4px solid var(--accent);
+}
+.section-tag { font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 2px; opacity: .55; margin-bottom: 5px; }
+.section-header h2 { font-size: 19px; font-weight: 600; }
+
+/* ── CARD ── */
+.card { background: var(--surface); border: 1px solid var(--border); padding: 22px; margin-bottom: 18px; }
+
+/* ── FORM ELEMENTS ── */
+.form-group { margin-bottom: 18px; }
+.form-label { display: block; font-weight: 500; margin-bottom: 9px; font-size: 13.5px; }
+.form-label small { font-weight: 400; color: var(--text-muted); }
+
+.radio-group { display: flex; flex-direction: column; gap: 7px; }
+.radio-group.row { flex-direction: row; gap: 10px; }
+.radio-group.row .radio-opt { flex: 1; }
+
+.radio-opt {
+  display: flex; align-items: center; gap: 9px;
+  cursor: pointer; padding: 9px 12px;
+  border: 1px solid var(--border); background: var(--bg);
+  transition: border-color .15s, background .15s; font-size: 13px;
+}
+.radio-opt:hover { border-color: var(--accent); background: var(--accent-light); }
+.radio-opt.chosen { border-color: var(--accent); background: var(--accent-light); }
+.radio-opt input { accent-color: var(--accent); }
+
+.text-input {
+  border: 1px solid var(--border); padding: 9px 11px;
+  font-family: 'DM Sans', sans-serif; font-size: 13px;
+  background: var(--bg); color: var(--text); outline: none; width: 180px;
+}
+.text-input:focus { border-color: var(--accent); }
+
+/* ── INSTRUCTIONS BOX ── */
+.instructions {
+  background: #E8F1FC; border: 1px solid #93BEF0;
+  padding: 12px 16px; margin-bottom: 18px; font-size: 13px;
+}
+.instructions strong { color: var(--accent); }
+
+/* ── SCALE LEGEND ── */
+.scale-legend { display: flex; gap: 4px; flex-wrap: wrap; margin-bottom: 14px; align-items: center; font-size: 12px; }
+.scale-legend strong { margin-right: 4px; font-size: 12.5px; }
+.s-item { display: flex; align-items: center; gap: 4px; margin-right: 6px; }
+.s-num { width: 22px; height: 22px; background: var(--header-bg); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 600; flex-shrink: 0; }
+
+/* ── VIEW PLANS BUTTON ── */
+.plans-btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: linear-gradient(135deg, #1A5FAD, #2E7DC6); color: #fff; border: none;
+  padding: 10px 20px; font-family: 'DM Sans', sans-serif;
+  font-size: 13px; font-weight: 500; cursor: pointer; margin-bottom: 18px;
+  transition: background .15s; box-shadow: 0 2px 8px rgba(26,95,173,0.22);
+}
+.plans-btn:hover { background: linear-gradient(135deg, #154E91, #1A5FAD); }
+.plans-btn svg { width: 15px; height: 15px; }
+
+/* ── RATING TABLE ── */
+.table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+
+.rtable { width: 100%; border-collapse: collapse; min-width: 640px; font-size: 12.5px; }
+.rtable th {
+  background: var(--header-bg); color: var(--header-text);
+  padding: 9px 6px; text-align: center;
+  font-family: 'DM Sans', sans-serif; font-weight: 500; font-size: 11.5px;
+  border: 1px solid rgba(255,255,255,.1);
+}
+.rtable th.th-left { text-align: left; padding-left: 12px; }
+.rtable th.th-plan { background: var(--accent); }
+.rtable td { border: 1px solid var(--border); padding: 9px 6px; vertical-align: middle; }
+.rtable tr:nth-child(even) td { background: #FDFCF9; }
+.rtable tr:nth-child(odd) td { background: var(--surface); }
+
+.item-code { font-size: 11px; font-weight: 700; color: var(--accent); text-align: center; white-space: nowrap; }
+.item-desc { min-width: 230px; max-width: 270px; line-height: 1.5; }
+
+.rcell {
+  text-align: center; cursor: pointer; width: 34px;
+  font-size: 17px; color: #C0BAB0; user-select: none;
+  transition: color .12s, background .12s;
+}
+.rcell:hover { background: var(--accent-light) !important; color: var(--accent); }
+.rcell.on { color: var(--accent); font-weight: 700; }
+
+.plan-sep { border-left: 2px solid var(--accent) !important; }
+
+/* ── MODAL ── */
+.modal-overlay {
+  position: fixed; inset: 0; background: rgba(10,10,20,.82);
+  z-index: 1000; display: none;
+  align-items: flex-start; justify-content: center;
+  overflow-y: auto;
+}
+.modal-overlay.open { display: flex; }
+.modal { background: var(--surface); width: 100%; max-width: 880px; margin: auto; position: relative; }
+.modal-head {
+  background: var(--header-bg); color: var(--header-text);
+  padding: 15px 20px; display: flex; align-items: center; justify-content: space-between;
+}
+.modal-head h3 { font-size: 16px; }
+.modal-close { background: none; border: none; color: var(--header-text); cursor: pointer; font-size: 22px; opacity: .7; transition: opacity .15s; }
+.modal-close:hover { opacity: 1; }
+
+.modal-tabs { display: flex; border-bottom: 2px solid var(--border); background: var(--bg); }
+.mtab {
+  padding: 11px 24px; font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 500;
+  border: none; background: none; cursor: pointer; color: var(--text-muted);
+  border-bottom: 3px solid transparent; margin-bottom: -2px; transition: all .15s;
+}
+.mtab.active { color: var(--accent); border-bottom-color: var(--accent); background: var(--surface); }
+.mtab-content { display: none; padding: 20px; }
+.mtab-content.active { display: block; }
+
+.plan-img { width: 100%; height: auto; display: block; border: 1px solid var(--border); }
+.img-placeholder {
+  background: #F2EDE6; border: 2px dashed var(--border);
+  padding: 48px 20px; text-align: center; color: var(--text-muted); font-size: 13px;
+}
+.img-placeholder .ph-icon { font-size: 36px; margin-bottom: 10px; }
+.img-placeholder code { background: #E8E3DC; padding: 2px 6px; font-size: 12px; border-radius: 2px; }
+
+/* ── NAV BUTTONS ── */
+.nav-row { display: flex; justify-content: space-between; align-items: center; margin-top: 22px; gap: 12px; }
+.btn {
+  padding: 12px 26px; font-family: 'DM Sans', sans-serif;
+  font-size: 13.5px; font-weight: 500; border: none; cursor: pointer; transition: all .15s;
+}
+.btn-back { background: transparent; border: 1px solid var(--border); color: var(--text); }
+.btn-back:hover { border-color: var(--accent); color: var(--accent); }
+.btn-next { background: var(--accent); color: #fff; box-shadow: 0 2px 8px rgba(26,95,173,0.22); }
+.btn-next:hover { background: linear-gradient(135deg, #154E91, #1A5FAD); }
+.btn-submit { background: linear-gradient(135deg, #0D2B5E, #1A4A8C); color: #fff; box-shadow: 0 2px 8px rgba(13,43,94,0.3); }
+.btn-submit:hover { background: linear-gradient(135deg, #08183A, #0D2B5E);  }
+
+/* ── VALIDATION ── */
+.val-msg {
+  background: #EAF2FF; border: 1px solid #93BEF0;
+  color: #1A4A8C; padding: 9px 14px; font-size: 13px;
+  margin-bottom: 14px; display: none;
+}
+.val-msg.show { display: block; }
+
+/* ── OPEN-ENDED ── */
+.open-ta {
+  width: 100%; min-height: 100px; border: 1px solid var(--border);
+  padding: 11px 12px; font-family: 'DM Sans', sans-serif; font-size: 13px;
+  background: var(--bg); color: var(--text); resize: vertical; outline: none;
+}
+.open-ta:focus { border-color: var(--accent); }
+
+/* ── THANK YOU ── */
+.thankyou { text-align: center; padding: 80px 20px; }
+.ty-icon { font-size: 52px; margin-bottom: 18px; }
+.thankyou h2 { font-size: 30px; margin-bottom: 12px; }
+.thankyou p { color: var(--text-muted); max-width: 420px; margin: 0 auto; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 580px) {
+  .container { padding: 16px 12px; }
+  .cover h1 { font-size: 21px; }
+  .btn { padding: 12px 16px; }
+}
+</style>
+<script src="./script.js" defer></script>
+</head>
+<body>
+
+<!-- ════ PROGRESS BAR ════ -->
+<div class="progress-bar-wrap">
+  <span class="prog-label" id="prog-label">Introduction</span>
+  <div class="prog-track"><div class="prog-fill" id="prog-fill" style="width:0%"></div></div>
+  <span class="prog-label" id="prog-step">1 / 6</span>
+</div>
+
+<!-- ════ LESSON PLAN MODAL ════ -->
+<div class="modal-overlay" id="lpModal">
+  <div class="modal">
+      <div class="modal-head">
+        <h3>Lesson Plans — 2nd Year BAC</h3>
+        <button class="modal-close" onclick="closeModal()">✕</button>
+      </div>
+      
+      <img src="/lesson_plans.png" alt="Lesson Plan A" class="plan-img">
+    </div>
+</div>
+
+<!-- ════════════════════════════════════════════════════ -->
+<div class="container">
+
+<!-- ── STEP 0 : COVER ── -->
+<div class="step active" id="step-0">
+  <div class="cover">
+    <img src="/UMI_logo.jpg" alt="UMI LOGO" class="logo-img" width="320" height="128">
+
+    <h1>Adapting the Quality EIS for AI-Generated EFL Lesson Plans: A Comparative Study Among Master's Students at The Faculty of Letters and Humanities, Meknes    </h1>
+    <div class="cover-rule"></div>
+    <p>This survey invites EFL master's students to evaluate AI-generated lesson plans using a set of quality criteria.</p>
+    <p>Your responses are <strong>anonymous</strong> and participation is entirely voluntary. Your input will contribute to the empirical validation of an adapted evaluation framework for AI-generated EFL lesson plans.</p>
+    <div class="cover-meta">
+      <div class="cover-meta-item">⏱ <b>10–15 min</b></div>
+      <div class="cover-meta-item">🔒 <b>Anonymous</b></div>
+      <div class="cover-meta-item">📋 <b>4 Sections</b></div>
+    </div>
+    <p style="font-size:13px;color:var(--text-muted);">Thank you in advance and I sincerely appreciate your time and participation.</p>
+    <div style="margin-top:32px;">
+      <button class="btn btn-next" onclick="goTo(1)" style="font-size:15px;padding:14px 36px;">Begin Survey →</button>
+    </div>
+  </div>
+</div>
+
+<!-- ── STEP 1 : SECTION A — DEMOGRAPHICS ── -->
+<div class="step" id="step-1">
+  <div class="section-header">
+    <div class="section-tag">Section A</div>
+    <h2>Demographic Information</h2>
+  </div>
+
+  <div class="card">
+    <!-- Q1 Age -->
+    <div class="form-group">
+      <label class="form-label">1. Age</label>
+      <div class="radio-group">
+        <label class="radio-opt"><input type="radio" name="age" value="1"> 20–25</label>
+        <label class="radio-opt"><input type="radio" name="age" value="2"> 26–30</label>
+        <label class="radio-opt"><input type="radio" name="age" value="3"> 31–35</label>
+        <label class="radio-opt"><input type="radio" name="age" value="4"> Older than 35</label>
+      </div>
+    </div>
+
+    <!-- Q2 Gender -->
+    <div class="form-group">
+      <label class="form-label">2. Gender</label>
+      <div class="radio-group row">
+        <label class="radio-opt"><input type="radio" name="gender" value="1"> Male</label>
+        <label class="radio-opt"><input type="radio" name="gender" value="2"> Female</label>
+      </div>
+    </div>
+
+    <!-- Q3 Program -->
+    <div class="form-group">
+      <label class="form-label">3. Master Program</label>
+      <div class="radio-group">
+        <label class="radio-opt"><input type="radio" name="program" value="1"> Applied Linguistics &amp; Foreign Language Teaching</label>
+        <label class="radio-opt"><input type="radio" name="program" value="2"> English for Specific Purposes</label>
+        <label class="radio-opt"><input type="radio" name="program" value="3"> Artificial Intelligence and Language Pedagogy</label>
+      </div>
+    </div>
+
+    <!-- Q4 Status -->
+    <div class="form-group">
+      <label class="form-label" style="display: flex; align-items: center; gap: 8px">4. Status
+        <svg style="outline: 2px solid #2586DD30; border-radius: 32px" fill="#2586DD" width="16" xmlns="http://www.w3.org/2000/svg" data-name="Layer 1" viewBox="0 0 100 100" x="0px" y="0px">
+          <title>Info</title>
+          <path d="M50,0a50,50,0,1,0,50,50A50,50,0,0,0,50,0Zm2.07,18.5a5.65,5.65,0,0,1,5.66,6c0,4.08-3.32,7.59-7.12,7.59-3.33,0-5.63-2.45-5.62-6A7.4,7.4,0,0,1,52.07,18.5ZM50.59,79.2a12.25,12.25,0,0,1-3.76,1.91c-4.27,1.44-7.53-1.23-6.85-5.68.55-3.54,1.25-7.07,2.13-10.54,1.22-4.79,2.66-9.53,3.79-14.52L40,55.18,37.89,50.4l3.82-3.26h0l.11-.09h0A63.72,63.72,0,0,1,47.31,43a11,11,0,0,1,5.2-1.36c3-.17,4.72,1.89,4,4.79C55.17,51.72,53.56,57,52.12,62.3c-.95,3.49-1.81,7-2.71,10.53l.38.22c2.8-2.51,5.59-5,8.43-7.59l3.89,3.9C58.22,72.71,54.46,76,50.59,79.2Z"/>
+        </svg></label>
+      <div class="radio-group">
+        <label class="radio-opt"><input type="radio" name="status" value="1" onchange="toggleExp(false)"> Student</label>
+        <label class="radio-opt"><input type="radio" name="status" value="2" onchange="toggleExp(true)"> In-service teacher</label>
+        <label class="radio-opt"><input type="radio" name="status" value="3" onchange="toggleExp(true)"> Both student and in-service teacher</label>
+      </div>
+    </div>
+
+    <!-- Q5 Experience (conditional) -->
+    <div class="form-group" id="exp-group" style="display:none;">
+      <label class="form-label">5. Years of experience <small>(if you are a teacher)</small></label>
+      <input type="text" class="text-input" id="exp-input" name="experience" placeholder="e.g., 3">
+    </div>
+
+    <!-- Q6 AI frequency -->
+    <div class="form-group">
+      <label class="form-label">6. How often do you use AI tools (e.g., ChatGPT) to assist with teaching or lesson preparation?</label>
+      <div class="radio-group">
+        <label class="radio-opt"><input type="radio" name="ai_freq" value="1"> Never</label>
+        <label class="radio-opt"><input type="radio" name="ai_freq" value="2"> Once or twice a month</label>
+        <label class="radio-opt"><input type="radio" name="ai_freq" value="3"> Once or twice a week</label>
+        <label class="radio-opt"><input type="radio" name="ai_freq" value="4"> Daily or almost daily</label>
+      </div>
+    </div>
+
+    <!-- Q7 Prior AI use -->
+     
+    <!-- radio-group -->
+    <!-- display: grid;
+    grid-auto-columns: 93px 64px;
+    grid-auto-flow: column;
+    grid-gap: 24px;
+    gap: 48px; -->
+    <!-- label width: 128px -->
+
+    <div class="form-group">
+      <label class="form-label">7. Have you previously used AI tools to generate lesson plans or teaching materials?</label>
+      <div class="radio-group row">
+        <label class="radio-opt"><input width="64" type="radio" name="prior_ai" value="2"> Yes</label>
+        <label class="radio-opt"><input width="64" type="radio" name="prior_ai" value="1"> No</label>
+      </div>
+    </div>
+  </div>
+
+  <div class="val-msg" id="val-1">⚠ Please answer all required questions before continuing.</div>
+  <div class="nav-row">
+    <button class="btn btn-back" onclick="goTo(0)">← Back</button>
+    <button class="btn btn-next" onclick="tryNext(1)">Continue →</button>
+  </div>
+</div>
+
+<!-- ── STEP 2 : SECTION B — CONTENT CHARACTERISTICS ── -->
+<div class="step" id="step-2">
+  <div class="section-header">
+    <div class="section-tag">Section B</div>
+    <h2>Content Characteristics</h2>
+  </div>
+
+  <div class="instructions">
+    <strong>Instructions:</strong> Before rating, please review both lesson plans using the button below.
+    <br>Then indicate your level of agreement with each statement for Plan A <strong>AND</strong> Plan B separately.
+  </div>
+
+  <button class="plans-btn" onclick="openModal()">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+    View Lesson Plans
+  </button>
+
+  <div class="card" style="padding:16px;">
+    <div class="scale-legend">
+      <strong>Scale:</strong>
+      <div class="s-item"><div class="s-num">1</div> Strongly Disagree</div>
+      <div class="s-item"><div class="s-num">2</div> Disagree</div>
+      <div class="s-item"><div class="s-num">3</div> Neutral</div>
+      <div class="s-item"><div class="s-num">4</div> Agree</div>
+      <div class="s-item"><div class="s-num">5</div> Strongly Agree</div>
+    </div>
+    <div class="table-wrap">
+      <table class="rtable"><thead id="thead-CC"></thead><tbody id="tbody-CC"></tbody></table>
+    </div>
+  </div>
+
+  <div class="val-msg" id="val-2">⚠ Please rate both plans for all items before continuing.</div>
+  <div class="nav-row">
+    <button class="btn btn-back" onclick="goTo(1)">← Back</button>
+    <button class="btn btn-next" onclick="tryNext(2)">Continue →</button>
+  </div>
+</div>
+
+<!-- ── STEP 3 : SECTION C — EXPRESSION CHARACTERISTICS ── -->
+<div class="step" id="step-3">
+  <div class="section-header">
+    <div class="section-tag">Section C</div>
+    <h2>Expression Characteristics</h2>
+  </div>
+
+  <div class="instructions">
+    <strong>Instructions:</strong> Before rating, please review both lesson plans using the button below.
+    <br>Then indicate your level of agreement with each statement for Plan A <strong>AND</strong> Plan B separately.
+  </div>
+
+  <button class="plans-btn" onclick="openModal()">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+    View Lesson Plans
+  </button>
+
+  <div class="card" style="padding:16px;">
+    <div class="scale-legend">
+      <strong>Scale:</strong>
+      <div class="s-item"><div class="s-num">1</div> Strongly Disagree</div>
+      <div class="s-item"><div class="s-num">2</div> Disagree</div>
+      <div class="s-item"><div class="s-num">3</div> Neutral</div>
+      <div class="s-item"><div class="s-num">4</div> Agree</div>
+      <div class="s-item"><div class="s-num">5</div> Strongly Agree</div>
+    </div>
+    <div class="table-wrap">
+      <table class="rtable"><thead id="thead-EC"></thead><tbody id="tbody-EC"></tbody></table>
+    </div>
+  </div>
+
+  <div class="val-msg" id="val-3">⚠ Please rate both plans for all items before continuing.</div>
+  <div class="nav-row">
+    <button class="btn btn-back" onclick="goTo(2)">← Back</button>
+    <button class="btn btn-next" onclick="tryNext(3)">Continue →</button>
+  </div>
+</div>
+
+<!-- ── STEP 4 : SECTION D — USER CHARACTERISTICS ── -->
+<div class="step" id="step-4">
+  <div class="section-header">
+    <div class="section-tag">Section D</div>
+    <h2>User Characteristics</h2>
+  </div>
+
+  <div class="instructions">
+    <strong>Instructions:</strong> Indicate your level of agreement with each statement for Plan A<strong/> AND </strong>Plan B.
+    <br><small style="color:var(--text-muted);"><strong>Note:</strong> For the item on curriculum and institutional requirements, student participants are invited to rate based on their familiarity with the national EFL curriculum from their secondary education (2nd year BAC).</small>
+  </div>
+
+  <button class="plans-btn" onclick="openModal()">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+    View Lesson Plans
+  </button>
+
+  <div class="card" style="padding:16px;">
+    <div class="scale-legend">
+      <strong>Scale:</strong>
+      <div class="s-item"><div class="s-num">1</div> Strongly Disagree</div>
+      <div class="s-item"><div class="s-num">2</div> Disagree</div>
+      <div class="s-item"><div class="s-num">3</div> Neutral</div>
+      <div class="s-item"><div class="s-num">4</div> Agree</div>
+      <div class="s-item"><div class="s-num">5</div> Strongly Agree</div>
+    </div>
+    <div class="table-wrap">
+      <table class="rtable"><thead id="thead-UC"></thead><tbody id="tbody-UC"></tbody></table>
+    </div>
+  </div>
+
+  <div class="val-msg" id="val-4">⚠ Please rate both plans for all items before continuing.</div>
+  <div class="nav-row">
+    <button class="btn btn-back" onclick="goTo(3)">← Back</button>
+    <button class="btn btn-next" onclick="tryNext(4)">Continue →</button>
+  </div>
+</div>
+
+<!-- ── STEP 5 : OPEN-ENDED + SUBMIT ── -->
+<div class="step" id="step-5">
+  <div class="section-header">
+    <div class="section-tag">Final Question</div>
+    <h2>Open-Ended Feedback</h2>
+  </div>
+
+  <div class="card">
+    <div class="form-group" style="margin-bottom:0;">
+      <label class="form-label">Was there any criterion you found unclear or difficult to apply? If yes, please specify.</label>
+      <textarea class="open-ta" id="open-ended" placeholder="Your response here (optional)…"></textarea>
+    </div>
+  </div>
+
+  <div class="val-msg" id="val-5"></div>
+  <div class="nav-row">
+    <button class="btn btn-back" onclick="goTo(4)">← Back</button>
+    <button class="btn btn-submit" onclick="submitSurvey()">Submit Survey ✓</button>
+  </div>
+</div>
+
+<!-- ── STEP 6 : THANK YOU ── -->
+<div class="step" id="step-6">
+  <div class="thankyou">
+    <div class="ty-icon">✅</div>
+    <h2>Thank You!</h2>
+    <div class="cover-rule"></div>
+    <p>Your responses have been recorded. Your contribution is greatly appreciated and will help advance research in AI-generated EFL lesson plan evaluation.</p>
+  </div>
+</div>
+
+</div>
+</body>
+</html>

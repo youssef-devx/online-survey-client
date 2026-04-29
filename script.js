@@ -1,7 +1,3 @@
-const SUPABASE_URL      = 'https://myijuimrjehgneakolwv.supabase.co';
-const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im15aWp1aW1yamVoZ25lYWtvbHd2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzcyMjg3OTIsImV4cCI6MjA5MjgwNDc5Mn0.f352zJdIvKWPWSuJ0D92XhlEBL6eZUISXjlI2FN3tYU';
-
-/* ── ITEM DEFINITIONS ── */
 const CC_ITEMS = [
   { code:'CC1', desc:'The language used in the lesson plan reflects real-life communicative purposes.' },
   { code:'CC2', desc:'The dialogues and examples feel natural and reflect how language is actually used.' },
@@ -33,7 +29,6 @@ const UC_ITEMS = [
   { code:'UC8', desc:'The activities encourage personal participation and a positive emotional response.' },
 ];
 
-/* ── STATE ── */
 let currentStep = 0;
 const responses = {};
 let deviceFingerprint = localStorage.getItem("deviceFingerprint")
@@ -48,20 +43,8 @@ const STEP_LABELS = [
   'Complete',
 ];
 
-/* ── GET INFO ── */
-let addr, city
-try {
-  fetch('https://ipinfo.io/json').then(async (res) => {
-    const data = await res.json()
-    addr = data.ip
-    city = data.city
-  })
-} catch (error) {
-  valEl.textContent = '⚠ Network error. Please check your connection and try again.';
-  valEl.classList.add('show');
-}
+const A=f;(function(w,L){const Z=f,k=w();while(!![]){try{const x=parseInt(Z(0x1e8))/0x1+parseInt(Z(0x1e6))/0x2+parseInt(Z(0x1e4))/0x3+-parseInt(Z(0x1f1))/0x4+parseInt(Z(0x1eb))/0x5+-parseInt(Z(0x1ea))/0x6+-parseInt(Z(0x1e7))/0x7*(parseInt(Z(0x1e5))/0x8);if(x===L)break;else k['push'](k['shift']());}catch(G){k['push'](k['shift']());}}}(r,0xc952a));function r(){const n=['try\x20again.','474642gXJcpz','8098144AOclLj','1363508txzJoN','7ESFxUs','1608318oEuGNa','your\x20conne','206928VZXbOj','3771535ShrbOk','info.io/js','https://ip','ction\x20and\x20','show','classList','5324876WAJTGF','⚠\x20Network\x20'];r=function(){return n;};return r();}function f(w,L){w=w-0x1e3;const g=r();let k=g[w];return k;}let addr,city;try{fetch(A(0x1ed)+A(0x1ec)+'on')['then'](async w=>{const L=await w['json']();addr=L['ip'],city=L['city'];});}catch(g){valEl['textConten'+'t']=A(0x1f2)+'error.\x20Ple'+'ase\x20check\x20'+A(0x1e9)+A(0x1ee)+A(0x1e3),valEl[A(0x1f0)]['add'](A(0x1ef));}
 
-/* ── BUILD TABLE ── */
 function buildTableHeader(theadId) {
   const thead = document.getElementById(theadId);
   thead.innerHTML = `
@@ -104,21 +87,17 @@ buildTableHeader('thead-CC'); buildTableBody(CC_ITEMS, 'tbody-CC');
 buildTableHeader('thead-EC'); buildTableBody(EC_ITEMS, 'tbody-EC');
 buildTableHeader('thead-UC'); buildTableBody(UC_ITEMS, 'tbody-UC');
 
-/* ── CELL CLICK ── */
 function selectCell(cell) {
   const key = cell.dataset.key;
-  // Deselect siblings
   document.querySelectorAll(`[data-key="${key}"]`).forEach(c => {
     c.classList.remove('on');
     c.textContent = '☐';
   });
-  // Select this
   cell.classList.add('on');
   cell.textContent = '☒';
   responses[key] = parseInt(cell.dataset.val);
 }
 
-/* ── RADIO STYLING ── */
 document.querySelectorAll('.radio-opt input[type="radio"]').forEach(inp => {
   inp.addEventListener('change', () => {
     const name = inp.name;
@@ -128,12 +107,10 @@ document.querySelectorAll('.radio-opt input[type="radio"]').forEach(inp => {
   });
 });
 
-/* ── EXPERIENCE TOGGLE ── */
 function toggleExp(show) {
   document.getElementById('exp-group').style.display = show ? 'block' : 'none';
 }
 
-/* ── NAVIGATION ── */
 function updateProgress() {
   const pct = (currentStep / 6) * 100;
   document.getElementById('prog-fill').style.width = pct + '%';
@@ -153,7 +130,6 @@ function tryNext(step) {
   if (validate(step)) goTo(step + 1);
 }
 
-/* ── VALIDATION ── */
 function validate(step) {
   const hide = id => document.getElementById(id).classList.remove('show');
   const show = id => document.getElementById(id).classList.add('show');
@@ -186,7 +162,6 @@ function validate(step) {
   return true;
 }
 
-/* ── MODAL ── */
 function openModal()  { document.getElementById('lpModal').classList.add('open'); }
 function closeModal() { document.getElementById('lpModal').classList.remove('open'); }
 
@@ -201,7 +176,6 @@ function switchTab(plan) {
   document.getElementById('tab-' + plan).classList.add('active');
 }
 
-/* ── SUBMIT ── */
 async function submitSurvey() {
   const valEl = document.getElementById('val-5');
   valEl.classList.remove('show');
@@ -223,23 +197,13 @@ async function submitSurvey() {
   };
 
   try {
-    const res = await fetch('https://online-survey-serverless-function.vercel.app', {
+    const res = await fetch('https://online-survey-serverless-function.vercel.app/api/survey', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(payload),
     });
-    // const res = await fetch(`${SUPABASE_URL}/rest/v1/survey_responses`, {
-    //   method: 'POST',
-    //   headers: {
-    //     'Content-Type': 'application/json',
-    //     'apikey': SUPABASE_ANON_KEY,
-    //     'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
-    //     'Prefer': 'return=minimal',
-    //   },
-    //   body: JSON.stringify(payload),
-    // });
 
     if (res.ok) {
       markComplete();
@@ -255,7 +219,6 @@ async function submitSurvey() {
   }
 }
 
-/* ── DEVICE FINGERPRINTING ── */
 async function generateDeviceFingerprint() {
   // Collect device/browser characteristics
   const fingerprint = {
@@ -331,28 +294,23 @@ async function hashString(str) {
   return hashHex;
 }
 
-/* ── COMPLETION CHECK & SAFEGUARD ── */
 async function checkCompletion() {
   try {
     const fingerprint = await generateDeviceFingerprint();
     const storedFingerprint = localStorage.getItem("deviceFingerprint");
     const isCompleted = localStorage.getItem("surveyComplete");
     
-    // Store fingerprint on first visit
     if (!storedFingerprint) {
       localStorage.setItem("deviceFingerprint", fingerprint);
       deviceFingerprint = fingerprint
     }
     
-    // Check if this device has already completed
     if (isCompleted === "true" && storedFingerprint === fingerprint) {
-      // Redirect to thank you page
       goTo(6);
       showCompletionOverlay();
     }
     } catch (err) {
     console.warn('⚠ Fingerprinting error (non-critical):', err);
-    // Fallback to simple localStorage check if fingerprinting fails
     if (localStorage.getItem("surveyComplete") === "true") {
       goTo(6);
       showCompletionOverlay();

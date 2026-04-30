@@ -197,7 +197,7 @@ async function submitSurvey() {
   };
 
   try {
-    const res = await fetch('https://online-survey-server.vercel.app/', {
+    const res = await fetch('https://online-survey-server-seven.vercel.app/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(payload),
